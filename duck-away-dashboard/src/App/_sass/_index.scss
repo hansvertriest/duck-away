@@ -1,0 +1,116 @@
+@import './variables';
+
+// All styles here
+.dashboard {
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+
+  &__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #2CAEF8 0%, #FFD951 100%);
+    height: 4px;
+    width: 100%;
+  }
+
+  &__options {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+
+    &--option {
+      margin: 20px;
+      font-family: $primary-font;
+      font-size: $subtitle-size;
+      position: relative;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    &--option.active-option {
+      opacity: 1;
+      cursor: auto;
+    }
+  }
+
+  #infinite-scroll {
+    overflow: hidden;
+  }
+
+  &__checkpoints {
+    &--checkpoint {
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      box-shadow: 0px 0px 25px rgba($color: #000000, $alpha: 0.1);
+      border-radius: 10px;
+      padding: 30px;
+
+      &--avatar {
+        display: flex;
+        align-items: center;
+
+        span {
+          display: inline-block;
+
+          img {
+            height: 100px;
+          }
+
+          p {
+            text-align: center;
+            font-weight: bold;
+            font-size: $text-size;
+            font-family: $primary-font;
+            margin: 10px 0 0 0;
+          }
+        }
+      }
+
+      &--position {
+        p {
+          font-family: $secundary-font;
+          font-size: $text-size;
+
+          strong {
+            font-family: $primary-font;
+            color: $blue-color;
+          }
+        }
+      }
+
+      &--distance {
+        p {
+          font-family: $secundary-font;
+          font-size: $text-size;
+
+          strong {
+            font-family: $primary-font;
+            color: $blue-color;
+          }
+        }
+      }
+
+      &--image {
+        img {
+          height: 140px;
+          border-radius: 10px;
+        }
+      }
+
+      &--approve {
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 30px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
