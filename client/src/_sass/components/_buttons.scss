@@ -1,0 +1,45 @@
+.small-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 25px rgba($color: #000000, $alpha: 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 20px 5px;
+}
+
+.small-button.green {
+    background-color: $green-color;
+}
+.small-button.red {
+    background-color: $red-color;
+}
+
+.regular-button {
+    margin-top: 10px;
+    background: $green-color;
+    width: 100%;
+    padding: 15px 0;
+    color: white;
+    font-family: $primary-font;
+    font-size: $text-size;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 4px 25px rgba($color: #000000, $alpha: 0.1);
+    cursor: pointer;
+}
+
+.rather-not {
+    color: #000000;
+    font-family: $primary-font;
+    font-size: $text-size;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    width: 100%;
+}

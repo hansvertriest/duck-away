@@ -1,0 +1,29 @@
+.shoot-img {
+    margin-top: 50px;
+    position: relative;
+    input {
+        display: block;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    label {
+        width: 100%;
+        display: block;
+
+        img {
+            height: 60px;
+        }
+
+        p {
+            text-align: center;
+            font-family: $primary-font;
+            margin-top: 10px;
+            font-size: $small-size;
+        }
+    }
+}

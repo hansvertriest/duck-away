@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./_sass/_index.scss";
 
-import { Checkpoints, Insights } from "./pages";
+import { Checkpoints, Insights, Logs } from "./pages";
 import { ApiProvider } from "./services";
 
 const App = () => {
@@ -11,6 +11,9 @@ const App = () => {
     <ApiProvider>
       <BrowserRouter>
         <Switch>
+          <Route exact path="/logs">
+            <Logs />
+          </Route>
           <Route exact path="/insights">
             <Insights />
           </Route>

@@ -72,6 +72,10 @@ export const Checkpoints = () => {
                 All routes
                 <span className="dashboard__options--option--border"></span>
               </h3>
+              <h3 className="dashboard__options--option" onClick={() => history.push('/logs')}>
+                All logs
+                <span className="dashboard__options--option--border"></span>
+              </h3>
             </span>
           </div>
         </div>

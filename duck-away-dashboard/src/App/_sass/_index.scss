@@ -39,6 +39,52 @@
     overflow: hidden;
   }
 
+  &__logs {
+    &--log {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      border-bottom: 0.5px solid rgba($color: #000000, $alpha: 0.2);
+      padding: 20px;
+
+      &--avatar {
+        display: flex;
+        align-items: center;
+        width: 60px;
+
+        span {
+          display: inline-block;
+
+          img {
+            height: 40px;
+          }
+        }
+      }
+
+      &--date {
+        margin-left: 50px;
+
+        h3 {
+          font-weight: bold;
+          font-size: $text-size;
+          font-family: $primary-font;
+          margin: 0;
+        }
+
+        p {
+          font-family: $secundary-font;
+          font-size: $text-size;
+          margin: 0;
+
+          strong {
+            font-family: $primary-font;
+            color: $blue-color;
+          }
+        }
+      }
+    }
+  }
+
   &__checkpoints {
     &--checkpoint {
       margin: 20px 0;

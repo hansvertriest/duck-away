@@ -41,6 +41,19 @@ const ApiProvider = ({children}) => {
         };
     };
 
+    const getLogs = async (limit, page) => {
+        if (token) {
+            const res = await fetch(`${baseUrl}logs/scans${(page && limit) ? '?page='+page+'&limit='+limit : ''}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token.token}`,
+                },
+            });
+
+            return await res.json();
+        };
+    };
+
     const getDucks = async () => {
         if (token) {
             const res = await fetch(`${baseUrl}admin/ducks`, {
@@ -64,6 +77,7 @@ const ApiProvider = ({children}) => {
         <ApiContext.Provider value={{
             getToken,
             getDucks,
+            getLogs,
             token,
             setToken,
             getCheckpoints,

@@ -1,0 +1,29 @@
+.title {
+    text-align: center;
+    font-family: $primary-font;
+    font-weight: 800;
+    font-size: $title-size;
+    padding-top: 50px;
+}
+
+.subtitle {
+    text-align: center;
+    font-family: $primary-font;
+    font-weight: 200;
+    font-size: $subtitle-size;
+    padding-top: 10px;
+
+    strong {
+        font-weight: 200;
+        color: $blue-color;
+    }
+}
+
+.main-subtitle {
+    text-align: center;
+    font-family: $primary-font;
+    font-weight: 200;
+    font-size: $subtitle-size;
+    padding-top: 30px;
+    color: $blue-color;
+}
