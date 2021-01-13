@@ -10,8 +10,10 @@ const checkPointSchema: Schema = new Schema({
         lon: { type: Number, required: true, },
     },
     pictureName: { type: String, required: true, },
-    subscriber: {  type: Schema.Types.ObjectId, ref: 'subscriber', },
-    approved: { type: Boolean, default: false }
+    subscriber: {  type: Schema.Types.ObjectId, ref: 'subscriber' },
+    approved: { type: Boolean, default: false },
+    totalDistance: { type: Number, default: 0 },
+    distanceFromStart: { type: Number, default: 0 },
 },
 {
     timestamps:true

@@ -63,6 +63,11 @@ class CheckPointController {
             }
             await duck.save();
 
+            // save checkPoint distances
+            savedCheckPoint.totalDistance = duck.totalDistance;
+            savedCheckPoint.distanceFromStart = duck.distanceFromStart;
+            await savedCheckPoint.save();
+
             // populate checkpoint
             const populatedCheckPoint = await savedCheckPoint.populate('duck').execPopulate();
             

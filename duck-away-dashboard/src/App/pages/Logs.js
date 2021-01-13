@@ -18,11 +18,11 @@ export const Logs = () => {
   const [ currentPage, setCurrentPage ] = useState(1);
 
   const fetchData = async () => {
-    const data = await getLogs(5, currentPage);
+    const data = await getLogs(4, currentPage);
 
     if (data !== undefined) {
       setCurrentPage(currentPage + 1)
-      setLogs([...logs, ...data]);
+      setLogs([...logs, ...data.logs.docs]);
     };
   };
 

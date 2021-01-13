@@ -17,7 +17,9 @@ interface ICheckPoint extends Document {
     position: IPosition,
     pictureName: string,
     subscriber: Types.ObjectId,
-    approved: Boolean
+    approved: Boolean,
+    totalDistance: Number;
+    distanceFromStart: Number;
 }
 
 export interface IDuck extends Document {
@@ -61,4 +63,8 @@ export interface ISubscriber extends Document {
     duck: string;
     checkPoint: string;
     email: string;
+}
+
+export interface IScanLog extends Document {
+    duck: Types.ObjectId;
 }

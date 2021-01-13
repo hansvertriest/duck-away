@@ -8,7 +8,8 @@ import {
     PictureController,
     CheckPointController,
     TeamController,
-    SubscriberController
+    SubscriberController,
+    ScanLogController
 } from '../controllers';
 import { AuthService, IConfig, GridFs } from '../services';
 
@@ -23,6 +24,7 @@ class Router {
     private CheckPointController: CheckPointController;
     private TeamController: TeamController;
     private SubscriberController: SubscriberController;
+    private ScanLogController: ScanLogController;
 
     constructor( app: Application, config: IConfig ) {
         this.app = app;
@@ -100,6 +102,7 @@ class Router {
         this.CheckPointController = new CheckPointController(this.config);
         this.TeamController = new TeamController();
         this.SubscriberController = new SubscriberController();
+        this.ScanLogController = new ScanLogController();
     }
 
     private registerRoutes() {
@@ -156,8 +159,8 @@ class Router {
         this.app.get('/team/:id', this.TeamController.getByIdPublic);
         this.app.get('/teams', this.TeamController.getAllPublic);
 
-
-
+        this.app.post('/logs/scan', this.verifyTokenForDuck, this.ScanLogController.new);
+        this.app.get('/logs/scans', this.verifyTokenForAdmin, this.ScanLogController.getAll);
 
 
     }

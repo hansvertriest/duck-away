@@ -4,6 +4,7 @@ import PictureController from './PictureController';
 import CheckPointController from './CheckPointController';
 import TeamController from './TeamController';
 import SubscriberController from './SubscriberController';
+import ScanLogController from './ScanLogController';
 
 export {
     TestController,
@@ -11,5 +12,6 @@ export {
     PictureController,
     CheckPointController,
     TeamController,
-    SubscriberController
+    SubscriberController,
+    ScanLogController
 }
