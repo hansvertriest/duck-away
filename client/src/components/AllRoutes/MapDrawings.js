@@ -39,7 +39,6 @@ const MapDrawings = () => {
             const result = await getDucks();
             setDucks(result.ducks.map(formatDuck));
         }
-
         if (token) fetchData();
     }, [token]);
   

@@ -1,0 +1,16 @@
+
+.container {
+    width: 100vw;
+    position: relative;
+    margin: 0 auto;
+
+    .mapboxgl-map {
+        margin: 0 auto;
+    }
+
+    .popup-img {
+        min-width: 10vw;
+        width: 300px;
+        max-width: 80vw;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 
 // Importing config
 import * as config from '../config';
@@ -9,7 +9,27 @@ const useApi = () => useContext(ApiContext);
 
 const ApiProvider = ({children}) => {
     // Importing base url
-    const baseUrl = config.duckAwayConfig.apiUrl;
+    const baseUrl = config.duckAwayConfig.apiUrl;    
+    const password = config.duckAwayConfig.apiPass;
+    
+    const [ token, setToken ] = useState();
+
+    const getToken = useCallback(async () => {
+        const res = await fetch(`${baseUrl}admin`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                'password': password,
+            }),
+        });
+
+        const secret = await res.json();
+
+        setToken(secret);
+    }, [baseUrl, password]);
 
     /**
      * @desc getting all teams
@@ -147,8 +167,30 @@ const ApiProvider = ({children}) => {
         return await response.json();
     };
 
+    const getDucks = async () => {
+        if (token) {
+            const res = await fetch(`${baseUrl}admin/ducks`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token.token}`,
+                },
+            });
+
+            return await res.json();
+        } else {
+            console.log('dd')
+        }
+    };
+
+
+    useEffect(() => {
+        getToken();
+    }, [getToken]);
+
     return (
         <ApiContext.Provider value={{
+            token,
+            
             getAllTeams,
             verifyDuck,
             submitDuckDescription,
@@ -158,6 +200,7 @@ const ApiProvider = ({children}) => {
             scannedCheckpoint,
             getDuckViaToken,
             scanDuck,
+            getDucks,
         }}>
             {children}
         </ApiContext.Provider>

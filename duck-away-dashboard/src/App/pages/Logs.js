@@ -18,7 +18,7 @@ export const Logs = () => {
   const [ currentPage, setCurrentPage ] = useState(1);
 
   const fetchData = async () => {
-    const data = await getLogs(4, currentPage);
+    const data = await getLogs(20, currentPage);
 
     if (data !== undefined) {
       setCurrentPage(currentPage + 1)

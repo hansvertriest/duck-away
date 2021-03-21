@@ -2,6 +2,9 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import { Col, Container, Row } from 'react-bootstrap';
 
+// Importing componenents
+import { MapOfAllRoutes } from '../../components';
+
 // Importing main layout
 import { WebpageLayout } from "../../layouts";
 
@@ -143,6 +146,18 @@ const Home = () => {
                                 )
                             })
                         }
+                    </Row>
+                </Container>
+            </section>
+            <section className="journey">
+                <Container>
+                    <Row>
+                        <Col xs={12}>
+                            <h1>
+                                Follow the journey
+                            </h1>
+                            <MapOfAllRoutes />
+                        </Col>
                     </Row>
                 </Container>
             </section>
